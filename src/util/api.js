@@ -8,19 +8,13 @@ export function splitYear(data){
 const url = "https://g54qw205uk.execute-api.eu-west-1.amazonaws.com/DEV/stub";
 const body = { "angular_test": "angular-developer" }
 
-export function getSalesData() {
-    let result = {};
+export function getSalesData(data) {
+  
     let first_year = [];
     let second_year = [];
     let third_year = [];
     let fourth_year = [];
-    
-
-    return new Promise((res, rej) => {
-
-        try {
-            axios.post(url, body).then(({ data }) => {
-                result.collections = data;
+ 
                 for (let sale of data) {
                     // console.log(splitYear(sale["Order Date"]))
                     if (splitYear(sale["Order Date"]) === "2014") {
@@ -35,22 +29,10 @@ export function getSalesData() {
             
           
                 }
-             
-            })
             
-          
-            result["first"] = first_year;
-            result["second"] = second_year;
-            result["third"] = third_year;
-            result["fourth"] = fourth_year;
-
-            console.log('api', result)
-            setInterval(res(result), 300)
-            
-        } catch (err) {
-            // console.log(err)
-        }
-})
+    return {
+             first_year, second_year, third_year, fourth_year
+         }
 }
 
 

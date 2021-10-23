@@ -2,10 +2,13 @@ import React from 'react';
 import { saleArrayList } from "../util/api";
 import { Line } from 'react-chartjs-2'
 import { useSelector } from "react-redux";
+import { getSalesData} from "../util/api"
 
 
-function LineChart({first, second, third, fourth}) {
-
+function LineChart({collections}) {
+    const result = getSalesData(collections);
+ 
+    const { first_year, second_year, third_year, fourth_year } = result;
    
    
     const data = {
@@ -13,7 +16,7 @@ function LineChart({first, second, third, fourth}) {
         datasets: [
             {
                 label: 'Profits for 2014(M)',
-                data: first ? saleArrayList(first) : null,
+                data: first_year ? saleArrayList(first_year) : null,
                 borderColor: ['rgba(255,206,86,0.2'],
                 backgroundColor: ['rgba(255,206,86,0.2'],
                 pointBackgroundColor: ['rgba(255,206,86,0.2'],
@@ -23,7 +26,7 @@ function LineChart({first, second, third, fourth}) {
             },
             {
                 label: 'Profits for 2015(M)',
-                data: second ? saleArrayList(second) : null,
+                data: second_year ? saleArrayList(second_year) : null,
                 borderColor: ['rgba(54,162,235,0.2'],
                 backgroundColor: ['rgba(54,162,235,0.2)'],
                 pointBackgroundColor: ['rgba(54,162,235,0.2'],
@@ -33,7 +36,7 @@ function LineChart({first, second, third, fourth}) {
             },
             {
                 label: 'Profits for 2016(M)',
-                data: third ? saleArrayList(third) : null,
+                data: third_year ? saleArrayList(third_year) : null,
                 borderColor: ['rgba(154,62,235,0.2'],
                 backgroundColor: ['rgba(154,62,235,0.2'],
                 pointBackgroundColor: ['rgba(154,62,235,0.2'],
@@ -43,7 +46,7 @@ function LineChart({first, second, third, fourth}) {
             },
             {
                 label: 'Profits for 2017(M)',
-                data: fourth? saleArrayList(fourth) : null,
+                data: fourth_year ? saleArrayList(fourth_year) : null,
                 borderColor: ['rgba(294,122,35,0.2'],
                 backgroundColor: ['rgba(294,122,35,0.2'],
                 pointBackgroundColor: ['rgba(294,122,35,0.2'],

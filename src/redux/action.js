@@ -8,13 +8,12 @@ export const dataActionCreator = (data) => {
     return {
         type: DATA_API,
         payload: data,
-        collections: data.collections
     }
 }
 
 export const handleSalesData = () => dispatch => {
     return getSalesData().then((result) => {
-           console.log("actions", result)
+        console.log("action", result)
         dispatch(dataActionCreator(result));
        
     })
