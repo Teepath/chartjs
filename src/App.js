@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { handleSalesData } from "./redux/action";
-import { getSalesData } from "./util/api";
+
 import './App.css'
-import { connect } from 'react-redux';
+
 import LineChart from "./components/Line";
 import BarChart from "./components/Bar";
 import PieChar from "./components/Pie";

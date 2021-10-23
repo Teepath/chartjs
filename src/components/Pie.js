@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { saleArrayList } from "../util/api";
 import { Pie } from 'react-chartjs-2'
-import { useSelector } from "react-redux";
+
 import { getSalesData} from "../util/api"
 
 

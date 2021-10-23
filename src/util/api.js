@@ -1,12 +1,10 @@
-import axios from "axios";
+
 
 export function splitYear(data){
     
     return data.split("/")[2]
 }
 
-const url = "https://g54qw205uk.execute-api.eu-west-1.amazonaws.com/DEV/stub";
-const body = { "angular_test": "angular-developer" }
 
 export function getSalesData(data) {
   
