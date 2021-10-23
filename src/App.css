@@ -1,11 +1,61 @@
+
+*{
+  box-sizing: content-box;
+}
+
+html{
+  margin:5px;
+  box-sizing: content-box;
+}
 .App {
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ height: auto;
+}
+
+.dash{
+  width: 100%;
+  background-color: tomato;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.chart{
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
 }
+.table{
+  margin-top: 20px;
+  float: right;
+}
+.table input{
+float: right;
+width: 400px;
+padding: 15px;
+font-size: 16px;
+border-radius: 5px;
+border: 1px solid;
+margin-right: 120px;
+}
+.table h4{
+  margin-left: 200px;
+}
+
+.chart div{
+  width: 50%;
+  height: 500px;
+  display:flex;
+  justify-content: space-around;
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -13,16 +63,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
 .App-link {
   color: #61dafb;
@@ -36,3 +76,5 @@
     transform: rotate(360deg);
   }
 }
+
+
